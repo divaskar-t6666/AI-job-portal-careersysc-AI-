@@ -1,0 +1,206 @@
+.career-agent-toggle {
+	position: fixed;
+	right: 24px;
+	bottom: 24px;
+	z-index: 1201;
+	display: inline-flex;
+	align-items: center;
+	gap: 9px;
+	padding: 14px 19px;
+	border: 0;
+	border-radius: 999px;
+	background: var(--gradient-primary, linear-gradient(135deg, #6366f1, #8b5cf6));
+	color: #fff;
+	box-shadow: 0 12px 30px rgba(79, 70, 229, 0.35);
+	font: inherit;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.career-agent-toggle i {
+	font-size: 1.25rem;
+}
+
+.career-agent-panel {
+	position: fixed;
+	right: 24px;
+	bottom: 88px;
+	z-index: 1202;
+	display: flex;
+	width: min(410px, calc(100vw - 32px));
+	height: min(620px, calc(100vh - 118px));
+	flex-direction: column;
+	overflow: hidden;
+	border: 1px solid var(--border-color, #e2e8f0);
+	border-radius: 20px;
+	background: var(--card-bg, #fff);
+	color: var(--text-primary, #0f172a);
+	box-shadow: 0 20px 60px rgba(15, 23, 42, 0.22);
+}
+
+.career-agent-panel[hidden] {
+	display: none;
+}
+
+.career-agent-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 16px 18px;
+	background: var(--gradient-primary, linear-gradient(135deg, #6366f1, #8b5cf6));
+	color: #fff;
+}
+
+.career-agent-header strong,
+.career-agent-header span {
+	display: block;
+}
+
+.career-agent-header span,
+.career-agent-hint {
+	font-size: 0.76rem;
+	opacity: 0.82;
+}
+
+.career-agent-close {
+	border: 0;
+	background: transparent;
+	color: inherit;
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+
+.career-agent-disclosure {
+	margin: 0;
+	padding: 10px 14px;
+	border-bottom: 1px solid var(--border-color, #e2e8f0);
+	color: var(--text-secondary, #64748b);
+	font-size: 0.75rem;
+	line-height: 1.45;
+}
+
+.career-agent-history {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	gap: 12px;
+	overflow: auto;
+	padding: 16px;
+}
+
+.career-agent-message {
+	max-width: 90%;
+	padding: 11px 13px;
+	border-radius: 14px;
+	background: var(--bg-color, #f1f5f9);
+	font-size: 0.88rem;
+	line-height: 1.5;
+	white-space: pre-wrap;
+	overflow-wrap: anywhere;
+}
+
+.career-agent-message.user {
+	align-self: flex-end;
+	background: #eef2ff;
+	color: #312e81;
+}
+
+.career-agent-message.assistant {
+	align-self: flex-start;
+}
+
+.career-agent-notice {
+	margin-top: 6px;
+	color: var(--text-secondary, #64748b);
+	font-size: 0.72rem;
+}
+
+.career-agent-suggestions {
+	display: grid;
+	gap: 7px;
+	margin-top: 10px;
+}
+
+.career-agent-suggestions a {
+	color: #4f46e5;
+	font-weight: 600;
+	text-decoration: underline;
+}
+
+.career-agent-loading {
+	margin: 0;
+	padding: 4px 16px;
+	color: var(--text-secondary, #64748b);
+	font-size: 0.82rem;
+}
+
+.career-agent-loading[hidden] {
+	display: none;
+}
+
+.career-agent-form {
+	display: flex;
+	align-items: flex-end;
+	gap: 8px;
+	padding: 12px;
+	border-top: 1px solid var(--border-color, #e2e8f0);
+}
+
+.career-agent-form textarea {
+	min-width: 0;
+	flex: 1;
+	resize: vertical;
+	padding: 10px 12px;
+	border: 1px solid var(--border-color, #cbd5e1);
+	border-radius: 12px;
+	background: var(--bg-color, #fff);
+	color: var(--text-primary, #0f172a);
+	font: inherit;
+}
+
+.career-agent-form button {
+	padding: 10px 14px;
+	border: 0;
+	border-radius: 10px;
+	background: #4f46e5;
+	color: #fff;
+	font: inherit;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.career-agent-form button:disabled {
+	opacity: 0.6;
+	cursor: wait;
+}
+
+.career-agent-hint {
+	margin: 0;
+	padding: 0 14px 10px;
+	color: var(--text-secondary, #64748b);
+	text-align: right;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	clip-path: inset(50%);
+}
+
+@media (max-width: 520px) {
+	.career-agent-toggle {
+		right: 16px;
+		bottom: 16px;
+	}
+
+	.career-agent-panel {
+		right: 8px;
+		bottom: 78px;
+		width: calc(100vw - 16px);
+		height: min(72vh, 620px);
+	}
+}

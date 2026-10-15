@@ -1,0 +1,252 @@
+:root {
+	--primary: #4f46e5;
+	--secondary: #8b5cf6;
+	--background: #f8fafc;
+	--surface: #ffffff;
+	--text: #0f172a;
+	--muted: #64748b;
+	--border: #e2e8f0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background: var(--background);
+	color: var(--text);
+	font-family: "Poppins", sans-serif;
+}
+
+.details-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	padding: 20px max(5vw, 20px);
+	background: var(--surface);
+	border-bottom: 1px solid var(--border);
+}
+
+.brand {
+	color: var(--primary);
+	font-size: 1.2rem;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.brand span {
+	display: block;
+	color: var(--muted);
+	font-size: 0.75rem;
+	font-weight: 500;
+}
+
+.back-button,
+.registration-link a {
+	color: var(--primary);
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.details-main {
+	width: min(100% - 32px, 1000px);
+	margin: 36px auto;
+}
+
+.details-card,
+.state-card {
+	padding: clamp(22px, 5vw, 48px);
+	border: 1px solid var(--border);
+	border-radius: 22px;
+	background: var(--surface);
+	box-shadow: 0 12px 35px rgba(15, 23, 42, 0.07);
+}
+
+.details-heading {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 24px;
+	padding-bottom: 28px;
+	border-bottom: 1px solid var(--border);
+}
+
+.details-heading h1 {
+	margin: 14px 0 6px;
+	font-size: clamp(1.6rem, 4vw, 2.3rem);
+}
+
+.company-name,
+.detail-section p,
+.meta-item span,
+.state-card {
+	color: var(--muted);
+}
+
+.type-badge {
+	display: inline-block;
+	padding: 6px 12px;
+	border-radius: 999px;
+	background: #eef2ff;
+	color: var(--primary);
+	font-size: 0.8rem;
+	font-weight: 700;
+}
+
+.application-actions {
+	display: grid;
+	justify-items: end;
+	gap: 10px;
+}
+
+.apply-button {
+	padding: 12px 20px;
+	border: 0;
+	border-radius: 12px;
+	background: linear-gradient(135deg, var(--primary), var(--secondary));
+	color: white;
+	font: inherit;
+	font-weight: 600;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.apply-button:disabled {
+	background: #94a3b8;
+	cursor: not-allowed;
+}
+
+.application-status {
+	color: #059669;
+	font-weight: 700;
+}
+
+.meta-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+	gap: 14px;
+	margin: 24px 0;
+}
+
+.meta-item {
+	padding: 14px 16px;
+	border: 1px solid var(--border);
+	border-radius: 14px;
+}
+
+.meta-item strong,
+.meta-item span {
+	display: block;
+}
+
+.meta-item strong {
+	margin-bottom: 4px;
+}
+
+.detail-section {
+	padding: 20px 0;
+	border-top: 1px solid var(--border);
+}
+
+.detail-section h2 {
+	margin: 0 0 10px;
+	font-size: 1.1rem;
+}
+
+.detail-section p {
+	margin: 0;
+	white-space: pre-wrap;
+	line-height: 1.75;
+}
+
+.career-analysis-section > p {
+	margin-bottom: 16px;
+}
+
+.career-analysis-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.secondary-action {
+	background: #eef2ff;
+	color: var(--primary);
+}
+
+.career-analysis-result {
+	margin-top: 18px;
+	padding: 18px;
+	border: 1px solid var(--border);
+	border-radius: 14px;
+	background: var(--background);
+}
+
+.career-analysis-result h3 {
+	margin: 0 0 10px;
+	font-size: 1rem;
+}
+
+.career-analysis-result h4 {
+	margin-top: 16px;
+	font-size: 0.92rem;
+}
+
+.career-analysis-result ul {
+	margin: 6px 0 0 20px;
+	color: var(--muted);
+	line-height: 1.6;
+}
+
+.career-analysis-result p {
+	margin: 8px 0 0;
+}
+
+.analysis-error {
+	margin-top: 14px;
+	color: #b91c1c;
+}
+
+.registration-link,
+.availability-message {
+	margin: 22px 0 0;
+	padding: 14px 16px;
+	border-radius: 12px;
+	background: #f1f5f9;
+	color: var(--text);
+}
+
+.error-state {
+	border-color: #fecaca;
+	color: #b91c1c;
+}
+
+.details-toast {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	display: none;
+	max-width: min(450px, calc(100vw - 40px));
+	padding: 14px 18px;
+	border-radius: 12px;
+	background: #0f172a;
+	color: white;
+}
+
+.details-toast.visible {
+	display: block;
+}
+
+@media (max-width: 650px) {
+	.details-header,
+	.details-heading {
+		align-items: stretch;
+		flex-direction: column;
+	}
+
+	.application-actions {
+		justify-items: stretch;
+	}
+}

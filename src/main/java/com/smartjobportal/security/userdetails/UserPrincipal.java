@@ -1,0 +1,64 @@
+package com.smartjobportal.security.userdetails;
+
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Locale;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+public class UserPrincipal implements UserDetails {
+
+	private String email;
+
+	private String password;
+
+	private String role;
+
+	public UserPrincipal(String email, String password, String role) {
+
+		this.email = email;
+		this.password = password;
+		String normalizedRole = role == null ? "" : role.trim().toUpperCase(Locale.ROOT);
+		this.role = normalizedRole.isEmpty() || normalizedRole.startsWith("ROLE_")
+				? normalizedRole
+				: "ROLE_" + normalizedRole;
+	}
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+
+		return Collections.singletonList(new SimpleGrantedAuthority(role));
+	}
+
+	@Override
+	public String getPassword() {
+		return password;
+	}
+
+	@Override
+	public String getUsername() {
+		return email;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return true;
+	}
+}

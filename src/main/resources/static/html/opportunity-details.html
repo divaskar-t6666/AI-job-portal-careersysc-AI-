@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Opportunity Details | CareerSync AI</title>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/opportunity-details.css">
+	<link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+	<header class="details-header">
+		<a class="brand" href="/html/candidate-dashboard.html">CareerSync AI <span>Smart Job Portal</span></a>
+		<a class="back-button" href="/html/candidate-dashboard.html#searchResultsSection">
+			<i class="ri-arrow-left-line" aria-hidden="true"></i> Back to Dashboard
+		</a>
+	</header>
+	<main class="details-main">
+		<div id="detailsLoading" class="state-card">Loading opportunity details...</div>
+		<div id="detailsError" class="state-card error-state" hidden></div>
+		<article id="opportunityDetails" class="details-card" hidden>
+			<div class="details-heading">
+				<div>
+					<span id="opportunityType" class="type-badge"></span>
+					<h1 id="opportunityTitle"></h1>
+					<p id="companyName" class="company-name"></p>
+				</div>
+				<div class="application-actions">
+					<span id="applicationStatus" class="application-status" hidden></span>
+					<button id="applyNowButton" class="apply-button" type="button" hidden>Apply Now</button>
+				</div>
+			</div>
+			<div id="registrationLinkContainer" class="registration-link" hidden></div>
+			<section id="companySection" class="detail-section" hidden>
+				<h2>Company / Organizer Information</h2>
+				<div id="companyDetails" class="meta-grid"></div>
+			</section>
+			<div id="opportunityMeta" class="meta-grid"></div>
+			<section class="detail-section">
+				<h2>Description and Responsibilities</h2>
+				<p id="opportunityDescription"></p>
+			</section>
+			<section id="problemSection" class="detail-section" hidden>
+				<h2>Problem Statement</h2>
+				<p id="problemStatement"></p>
+			</section>
+			<section id="skillsSection" class="detail-section">
+				<h2>Required Skills</h2>
+				<p id="requiredSkills"></p>
+			</section>
+			<section id="eligibilitySection" class="detail-section" hidden>
+				<h2>Eligibility and Qualifications</h2>
+				<p id="eligibilityCriteria"></p>
+			</section>
+			<section id="typeSpecificSection" class="detail-section" hidden>
+				<h2>Additional Details</h2>
+				<div id="typeSpecificDetails" class="meta-grid"></div>
+			</section>
+			<section id="instructionsSection" class="detail-section" hidden>
+				<h2>Application / Registration Instructions</h2>
+				<p id="applicationInstructions"></p>
+			</section>
+			<section class="detail-section career-analysis-section">
+				<h2>Career Readiness</h2>
+				<p>Compare your active parsed resume with this saved opportunity. Missing resume evidence does not mean you lack a skill.</p>
+				<div class="career-analysis-actions">
+					<button id="analyzeSkillGapButton" class="apply-button" type="button">Analyze Skill Gap</button>
+					<button id="checkReadinessButton" class="apply-button secondary-action" type="button">Check Readiness</button>
+					<button id="askAgentButton" class="apply-button secondary-action" type="button">Ask AI</button>
+				</div>
+				<div id="careerAnalysisLoading" class="availability-message" hidden>Analyzing your saved resume and this opportunity...</div>
+				<div id="careerAnalysisError" class="analysis-error" role="alert" hidden></div>
+				<div id="careerAnalysisResult" class="career-analysis-result" hidden aria-live="polite"></div>
+			</section>
+			<p id="availabilityMessage" class="availability-message" hidden></p>
+		</article>
+	</main>
+	<div id="detailsToast" class="details-toast" role="status" aria-live="polite"></div>
+	<script src="/js/opportunity-details.js"></script>
+</body>
+</html>
